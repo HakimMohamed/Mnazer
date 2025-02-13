@@ -2,14 +2,8 @@
 import React from "react";
 import { Accordion, AccordionItem } from "@heroui/accordion";
 
-import { prespectives } from "./prespectives";
 import { Card } from "@heroui/react";
-
-interface Criterion {
-  id: string;
-  title: string;
-  documents: string[];
-}
+import { perspectives } from "./prespectives";
 
 const DigitalTransformationFramework = () => {
   return (
@@ -24,7 +18,7 @@ const DigitalTransformationFramework = () => {
           </p>
         </div>
 
-        {prespectives.map((pres) => (
+        {perspectives.map((pres) => (
           <div key={pres.name} className="mb-12">
             <h2 className="text-xl text-blue-600 border-r-4 border-blue-500 pr-4 mb-6 font-bold">
               {pres.name}
@@ -61,6 +55,14 @@ const DigitalTransformationFramework = () => {
                                 className="text-sm text-gray-700 leading-relaxed"
                               >
                                 {doc}
+                                <div className="mt-2 flex  gap-2">
+                                  <button className="px-4 py-2 mr-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                    تحقق من الملفات
+                                  </button>
+                                  <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                                    توليد الملفات
+                                  </button>
+                                </div>
                               </li>
                             ))}
                         </ul>
