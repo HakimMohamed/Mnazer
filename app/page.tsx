@@ -3,6 +3,7 @@ import React from "react";
 import { Accordion, AccordionItem } from "@heroui/accordion";
 
 import { prespectives } from "./prespectives";
+import { Card } from "@heroui/react";
 
 interface Criterion {
   id: string;
@@ -30,9 +31,11 @@ const DigitalTransformationFramework = () => {
             </h2>
 
             {pres.content.map((axis) => (
-              <div
+              <Card
+                isFooterBlurred
+                className="border-none p-4  mb-8"
+                radius="lg"
                 key={axis.axisId}
-                className="bg-white rounded-lg mb-8 p-6 shadow-md hover:shadow-lg transition-shadow"
               >
                 <h3 className="text-xl font-semibold text-gray-800 mb-6 text-right border-b border-blue-200 pb-2">
                   {axis.axisTitle}
@@ -65,7 +68,7 @@ const DigitalTransformationFramework = () => {
                     </AccordionItem>
                   ))}
                 </Accordion>
-              </div>
+              </Card>
             ))}
           </div>
         ))}
